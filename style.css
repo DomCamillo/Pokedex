@@ -1,0 +1,65 @@
+body{
+    background-color: #DC0A2D;
+   
+}
+.PokeballImg{
+    height: 70px;
+}
+.headerTop{
+    display: flex;
+    color: white;
+    font-family:sans-serif;
+    font-size: 20px;
+    align-items: center;
+    margin-left: 30px;
+
+}
+.SearchBar{
+    margin-left: 30px;
+    width: 60%;
+    height: 35px;
+    border-radius: 15px;
+    font-size: larger;
+    margin-bottom: 20px;
+    
+    
+}
+input[type=text] {
+    background-color: white;
+    background-image: url('img/search icon.png');
+    background-position: 5px 18px ; 
+    background-repeat: no-repeat;
+    padding: 12px 15px 12px 30px;
+    background-size: 20px 20px; 
+  }
+
+  .mainCard{
+    height: 80vh;
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    border: solid 2px black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow-y: auto;
+    padding: 10px;
+  
+  }
+  .cardBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .pokemonCard{
+    height: 300px;
+    width: 200px;
+    background-color: rgba(176, 168, 168, 0.647);
+    border-radius: 5px;
+    border: outset rgb(130, 128, 128) 2px;
+    margin: 15px;
+    padding: 10px;
+  }
