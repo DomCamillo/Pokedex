@@ -1,21 +1,36 @@
-const Base_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+const Base_URL = "https://pokeapi.co/api/v2/";
+const Max_Pokemon = 151;
 
-//function load() {
-//let cardContainer = document.getElementById('Pokemon-Card').parentNode;
-//    cardContainer.innerHTML = '';  // Erst den Container leeren
-//
-//    for (let i = 0; i < 10; i++) {
-//        let newCard = document.createElement('div');
-//        newCard.className = 'pokemonCard';
-//        newCard.innerHTML = 'Hallo';
-//        cardContainer.appendChild(newCard);
-//    }
-//}
+let AllPokemons = [];
 
-function load(){
-    let card = document.getElementById('main-Card');
-    for (let i = 0; i < 10; i++) {
-        card.innerHTML +=`<div class="pokemonCard"></div>`
+async function loadPokeData() {
+    let Pokemons = await fetch(`${Base_URL}pokemon/?limit=${Max_Pokemon}`);
+    let PokemonToJson = await Pokemons.json();
+    AllPokemons = PokemonToJson.results;
+    console.log(AllPokemons[0].name);
+    getEachPokeData();
+    
+    
+}
+  async function getEachPokeData(){
+  for (let i = 0; i < AllPokemons.length; i++) {
+    const Pokemon = AllPokemons[i].name;
+    console.log(Pokemon);
+   }
+   load();
+}
+
+ async function load(Pokemon){
+    let card = document.getElementById('main-card');
+    card.innerHTML = '';
+    for (let i = 0; i < 10 ; i++) {
         
+        card.innerHTML += `<div class="pokemonCard">${Pokemon} </div>`
     }
+}
+
+function init(){
+    loadPokeData();
+
+    getEachPokeData();
 }

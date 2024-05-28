@@ -44,7 +44,7 @@ input[type=text] {
     justify-content: flex-start;
     align-items: flex-start;
     overflow-y: auto;
-    padding: 10px;
+   
   
   }
   .cardBody{
@@ -57,9 +57,11 @@ input[type=text] {
   .pokemonCard{
     height: 300px;
     width: 200px;
-    background-color: rgba(176, 168, 168, 0.647);
+    background-color: rgba(108, 103, 103, 0.244);
     border-radius: 5px;
     border: outset rgb(130, 128, 128) 2px;
     margin: 15px;
     padding: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
   }
