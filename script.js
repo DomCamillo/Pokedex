@@ -1,36 +1,35 @@
-const Base_URL = "https://pokeapi.co/api/v2/";
-const Max_Pokemon = 151;
+const pokedex = document.getElementById('main-card');
 
-let AllPokemons = [];
-
-async function loadPokeData() {
-    let Pokemons = await fetch(`${Base_URL}pokemon/?limit=${Max_Pokemon}`);
-    let PokemonToJson = await Pokemons.json();
-    AllPokemons = PokemonToJson.results;
-    console.log(AllPokemons[0].name);
-    getEachPokeData();
-    
-    
-}
-  async function getEachPokeData(){
-  for (let i = 0; i < AllPokemons.length; i++) {
-    const Pokemon = AllPokemons[i].name;
-    console.log(Pokemon);
-   }
-   load();
-}
-
- async function load(Pokemon){
-    let card = document.getElementById('main-card');
-    card.innerHTML = '';
-    for (let i = 0; i < 10 ; i++) {
-        
-        card.innerHTML += `<div class="pokemonCard">${Pokemon} </div>`
+const fetchPokemon = () => {
+    const promises = [];
+    for (let i = 1; i <= 150; i++) {
+        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
+        promises.push(fetch(url).then((res) => res.json()));
     }
-}
+    Promise.all(promises).then((results) => {
+        const pokemon = results.map((result) => ({
+            name: result.name.toUpperCase(),
+            image: result.sprites['front_default'],
+            type: result.types.map((type) => type.type.name).join(', '),
+            id: result.id
+        }));
+        displayPokemon(pokemon);
+    });
+};
 
-function init(){
-    loadPokeData();
+const displayPokemon = (pokemon) => {
+    const pokemonHTMLString = pokemon
+        .map(
+            (pokeman) => `
+                <div class="pokemonCard"> 
+                    <div class="PokeNames">${pokeman.name} #${pokeman.id}</div>
+                    <div class="PokeImgDiv"><img class="PokeImg" src="${pokeman.image}" alt="${pokeman.name}"></div>
+                    <div class="PokeType">${pokeman.type}</div>
+                </div>
+            `
+        )
+        .join('');
+    pokedex.innerHTML = pokemonHTMLString;
+};
 
-    getEachPokeData();
-}
+fetchPokemon();

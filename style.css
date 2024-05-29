@@ -63,5 +63,58 @@ input[type=text] {
     margin: 15px;
     padding: 10px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
+    background-image: url(img/pokeball2.png);
+    background-position: 178px  278px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+   
+    
+  }
+  
+
+  ::-webkit-scrollbar-track {
+    background: #d3d2d2;
+    border: outset 1px black;
+  }
+  
+
+  ::-webkit-scrollbar-thumb {
+    background: #DC0A2D;
+    border-radius: 3px;
+    height: 40px;
+    border: solid 1px black;
+  }
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e9e6e7;
+  }
+  .PokeNames{
+    display: flex;
+    justify-content: space-around;
+    
+    color: black;
+    
+  }
+  .PokeImgDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 200px;
+  }
+  .PokeType{
+    display: flex;
+    justify-content: center;
+   
+
+  }
+  .PokeImg{
+    height: 150px;
   }
