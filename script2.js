@@ -37,6 +37,13 @@ function load(pokemonNames) {
 function init() {
     loadPokeData();  
 }
+function searchPokemon(){ 
+    // let pokesearch = document.getElementById('search-bar');
+    //  Pokesearch = pokesearch.value.toUpperCase();
+    // console.log(Pokesearch);
+      
+   
+   };
 
 
 window.onload = init;

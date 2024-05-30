@@ -9,14 +9,16 @@
     <link rel="icon" type="image/x-icon" href="img/Pokeball.png">
     <link rel="stylesheet" href="https://www.fontspace.com/pocket-monk-font-f23540">
 </head>
-<body onload="init()">
+<body>
     <header>
         <div class="headerTop">
-            <img class="PokeballImg" src="img/Pokeball.png" alt="">
+            <img class="PokeballImg" src="img/pokeball3.png" alt="">
             <h1>Pokédex</h1>
         </div>
-        <div>
-            <input  class="SearchBar" type="text" placeholder="Search Pokemon">
+        <div class="searchSection">
+            <input onkeydown="searchPokemon()"  id="search-bar"  class="SearchBar" type="text" placeholder="Search Pokemon" >
+            <button class="searchButton" onclick="searchPokemon(), cleansearch()" ></button>
+         
            
         </div>
     </header>
