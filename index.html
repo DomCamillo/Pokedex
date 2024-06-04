@@ -12,18 +12,19 @@
 <body>
     <header>
         <div class="headerTop">
-            <img class="PokeballImg" src="img/pokeball3.png" alt="">
+            <img class="PokeballImg" src="img/pokeball4.png" alt="">
             <h1>Pokédex</h1>
         </div>
         <div class="searchSection">
             <input onkeydown="searchPokemon()"  id="search-bar"  class="SearchBar" type="text" placeholder="Search Pokemon" >
+          <div class="pokdedexbuttons"> 
             <button class="searchButton" onclick="searchPokemon(), cleansearch()" ></button>
-         
-           
+            
+          </div>
         </div>
     </header>
 
-    <section class="cardBody">
+    <section  class="cardBody">
 
     <div id="main-card" class="mainCard">
 
@@ -37,7 +38,8 @@
   </section>
 
   <div class="center"><button class="loadMoreButton" id="load-more" onclick="loadMorePokemon()">Load More</button></div>
+ 
 
-    <script src="script.js"></script>
+    <script src="Pokescript.js"></script>
 </body>
 </html>
