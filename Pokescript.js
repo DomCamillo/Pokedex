@@ -67,25 +67,29 @@ async function showPokeInfo(id) {
   const maincard = document.getElementById("main-card");
   const typeClass = pokemon.firstType;
   maincard.innerHTML += `
-        <div class="PokeCardInfo ${typeClass} ">
-           <div class="Pokecardbutton"> <h2 class="PokeInfoCardName">${
-             pokemon.name
-           } </h2>  <button class="PokeCardClosebutton" onclick="closePokeInfo()">Close</button> </div>
-           <div class="center"> <img src="${pokemon.image}" alt="${pokemon.name}"> </div>
-             <div class="center"> <p class="PokeStats"><b>Type:</b> ${
-               pokemon.type
-             }</p> <p class="PokeStats"> <b> Weight: </b> ${pokemon.weight} Kg.</p> </div>
-            
-            <h3>Stats</h3>
-            <ul class="PokeStats">
-                ${pokemon.stats.map((stat) => `<li>${stat.name}: ${stat.value}</li>`).join("")}
-            </ul>
-            <h3>Moves</h3>
-            <ul class="PokeStats">
-                ${pokemon.moves.slice(0, 10).map((move) => `<li>${move}</li>`).join("")}
-            </ul>
-            
-        </div>
+  <div class="PokeCardInfo ${typeClass}">
+  <div class="Pokecardbutton">
+    <h2 class="PokeInfoCardName">${pokemon.name}</h2>
+    <button class="PokeCardClosebutton" onclick="closePokeInfo()">Close</button>
+  </div>
+  <div class="center">
+    <button onclick="nextPokemon('left')" class="nextPokemonButton"><</button>
+    <img src="${pokemon.image}" alt="${pokemon.name}">
+    <button onclick="nextPokemon('right')" class="nextPokemonButton">></button>
+  </div>
+  <div class="center">
+    <p class="PokeStats"><b>Type:</b> ${pokemon.type}</p>
+    <p class="PokeStats"><b>Weight:</b> ${pokemon.weight} Kg.</p>
+  </div>
+  <h3>Stats</h3>
+  <ul class="PokeStats">
+      ${pokemon.stats.map((stat) => `<li>${stat.name}: ${stat.value}</li>`).join("")}
+  </ul>
+  <h3>Moves</h3>
+  <ul class="PokeStats">
+      ${pokemon.moves.slice(0, 10).map((move) => `<li>${move}</li>`).join("")}
+  </ul>
+</div>
     `;
 }
 
@@ -108,4 +112,13 @@ function checkPokemon() {
   if (allPokemon.length >= MaxPokemon) {
     loadMoreButton.style.display = "none";
   }
+}
+
+function nextPokemon(direction){
+  if (direction === 'left') {
+    currentPokemonIndex = (currentPokemonIndex - 1 + allPokemon.length) % allPokemon.length;
+  } else if (direction === 'right') {
+    currentPokemonIndex = (currentPokemonIndex + 1) % allPokemon.length;
+  }
+  showPokeInfo(allPokemon[currentPokemonIndex].id);
 }

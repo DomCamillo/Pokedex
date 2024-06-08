@@ -252,6 +252,15 @@ input[type=text] {
   margin-top: 10px;
 }
 
+.nextPokemonButton{
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  border: #cc1c39e1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 
 
 
@@ -307,3 +316,61 @@ input[type=text] {
 }
 
   
+
+@media(max-width: 500px){
+
+.PokeCardInfo{
+  font-size: 15px;
+  height:  fit-content;
+}
+.PokeCardInfo h2, .PokeCardInfo h3 {
+  font-size: 20px;
+}
+.PokeCardInfo img{
+  height: 130px;
+}
+.pokemonCard{
+  height: 200px;
+  width: 150px;
+  font-size: 16px;
+  margin: 10px;
+}
+.PokeImg{
+  height: 120px;
+}
+.PokeImgDiv{
+  height: 140px;
+}
+.PokeballImg{
+  height: 60px;
+}
+.headerTop{
+  font-size: 18px;
+  gap: 10px;
+}
+.searchSection{
+  height: 45px;
+}
+.SearchBar{
+  height: 18px;
+}
+.searchButton{
+  height: 30px;
+  width: 30px;
+  background-size: 30px;
+  background-position: 0px 0px;
+  margin-right: 10px;
+}
+.mainCard{
+  display: flex;
+}
+.PokeCardClosebutton{
+  height: 20px;
+  width: 42px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+}
