@@ -42,7 +42,8 @@ body{
 }
 
 .svg{
-  margin-right: 20px;
+  padding-right: 20px;
+  
 }
 .icon-text{
   display: flex;
@@ -215,12 +216,14 @@ input[type=text] {
     gap: 35px;
     align-items: center;
     margin-bottom: 20px;
-    margin-left: 15px;
+    margin-left: 55px;
     margin-right: 15px;
     border: outset 2px rgba(250, 246, 246, 0.676);
     border-radius: 50px;
     background-color: #474646;
     height: 70px;
+    width: 90%;
+   
   }
 
   blur{
@@ -363,10 +366,19 @@ input[type=text] {
     background-color: rgba(121, 196, 219, 0.95);
 }
 
+@media(max-width: 1000px){
+  .searchSection{
+    margin-left: 10px;
+  }
+}
+
 @media(max-width: 900px){
 .svg{
   display: none;
 }
+
+
+
 }
 @media(max-width: 800px){
 .podexColorButton{
