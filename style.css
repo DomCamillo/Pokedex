@@ -212,7 +212,7 @@ input[type=text] {
 
   .searchSection{
     display: flex;
-    gap: 15px;
+    gap: 35px;
     align-items: center;
     margin-bottom: 20px;
     margin-left: 15px;
@@ -363,7 +363,16 @@ input[type=text] {
     background-color: rgba(121, 196, 219, 0.95);
 }
 
-  
+@media(max-width: 900px){
+.svg{
+  display: none;
+}
+}
+@media(max-width: 800px){
+.podexColorButton{
+  display: none;
+}
+}
 
 @media(max-width: 500px){
 
