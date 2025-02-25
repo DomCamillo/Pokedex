@@ -6,26 +6,58 @@
     <title>Pokedex</title>
     <link rel="stylesheet" href="style.css">
  
-    <link rel="icon" type="image/x-icon" href="img/Pokeball.png">
+    <link rel="icon" type="image/x-icon" href="assets/img/Pokeball.png">
     <link rel="stylesheet" href="https://www.fontspace.com/pocket-monk-font-f23540">
 </head>
 <body>
     <header>
         <div class="headerTop">
-            <img class="PokeballImg" src="img/pokeball4.png" alt="">
-            <h1>Pokédex</h1>
+
+          <div class="icon-text">
+            <img class="PokeballImg" src="assets/img/pokeball4.png" alt="">
+            <h1 class="pokedex-headline">Pokédex</h1>
+          </div>
+            
+            <svg class="svg" width="120" height="120" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Hintergrundkreis -->
+              <circle cx="100" cy="100" r="80" fill="blue" />
+            
+              <!-- Verlauf für den 3D-Effekt -->
+              <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" style="stop-color: lightblue; stop-opacity: 1" />
+                <stop offset="100%" style="stop-color: blue; stop-opacity: 1" />
+              </radialGradient>
+            
+              <!-- Blaue Kugel mit Verlauf -->
+              <circle cx="100" cy="100" r="80" fill="url(#grad)" />
+            
+              <!-- Weißer Schimmer -->
+              <circle cx="70" cy="70" r="30" fill="white" opacity="0.6" />
+            </svg>
         </div>
+
+      
+<div></div>
+
         <div class="searchSection">
-            <input onkeydown="searchPokemon()"  id="search-bar"  class="SearchBar" type="text" placeholder="Search Pokemon" >
+            <input onkeyup="searchPokemon()"  id="search-bar"  class="SearchBar" type="text" placeholder="Search Pokemon" >
           <div class="pokdedexbuttons"> 
             <button class="searchButton" onclick="searchPokemon(), cleansearch()" ></button>
-            
           </div>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#FF0000" />
+          </svg>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#00FF00" />
+          </svg>
+          <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#FFFF00" />
+          </svg>
         </div>
     </header>
 
-    <section  class="cardBody">
-
+    <section id="cardBody"  class="cardBody">
+    
     <div id="main-card" class="mainCard">
 
         <div id="poke-card" class="pokemonCard">

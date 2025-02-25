@@ -1,10 +1,25 @@
+@font-face {
+  font-family: 'Pixel';
+  src: url('./assets/fonts/pixel-arial-14.otf') format('opentype');;
+}
+@font-face {
+  font-family: 'Pokemon-hollow';
+  src: url('./assets/fonts/Pokemon Hollow.ttf') format('opentype');;
+}
+@font-face {
+  font-family: 'Pokemon';
+  src: url('./assets/fonts/Pokemon Solid.ttf') format('opentype');;
+}
+
+
+
 *{
   scroll-behavior: smooth;
   margin: 0;
 }
 
 body{
-    background-color: #cc1c39e1;
+    background-color:rgb(221, 18, 52);
     z-index: 1000;
 }
 
@@ -14,13 +29,28 @@ body{
 
 .headerTop{
     display: flex;
-    color: rgb(247, 255, 17);
-    font-family:system-ui;
-    font-size: 22px;
+    color: rgb(255, 202, 1);
+    font-family:"Pokemon";
+    font-size: 28px;
     align-items: center;
+    justify-content: space-between;
     margin-left: 30px;
     gap: 30px;
-    -webkit-text-stroke: 2px rgb(30, 122, 242); 
+    -webkit-text-stroke: 4px rgb(53, 92, 160); 
+    margin: 0;
+
+}
+
+.svg{
+  margin-right: 20px;
+}
+.icon-text{
+  display: flex;
+  align-items: center;
+}
+
+.pokedex-headline{
+margin: 0;
 }
 
 .SearchBar{
@@ -32,7 +62,7 @@ body{
  }
 input[type=text] {
     background-color: rgba(248, 248, 248, 0.976);
-    background-image: url('img/search icon.png');
+    background-image: url('asstes/img/search icon.png');
     background-position: 5px 18px ; 
     background-repeat: no-repeat;
     padding: 12px 15px 12px 30px;
@@ -42,7 +72,7 @@ input[type=text] {
   .mainCard{
     height: 80vh;
     width: 95%;
-    background-color: white;
+    background-color: rgb(245, 243, 243);
     border-radius: 10px;
     border: solid 2px black;
     display: flex;
@@ -50,6 +80,18 @@ input[type=text] {
     justify-content: flex-start;
     align-items: flex-start;
     overflow-y: auto;
+   
+  }
+
+  .blur{
+    filter: blur(1px);
+  }
+
+
+ 
+  
+  .background.blur {
+    filter: blur(5px);
   }
 
   .cardBody{
@@ -61,18 +103,24 @@ input[type=text] {
   .pokemonCard:hover{
     transform: scale(1.05);
   }
+  .arrow{
+    height: 25px;
+    width: 25px;
+    margin: 0;
+    filter: invert(1);
+  }
 
   .pokemonCard{
     height: 300px;
     width: 200px;
     background-color: rgba(108, 103, 103, 0.244);
     border-radius: 5px;
-    border: outset rgb(130, 128, 128) 2px;
+    border: outset rgb(202, 194, 194) 2px;
     margin: 15px;
     padding: 10px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:"Pixel";
     font-size: 20px;
-    background-image: url(img/pokeball2.png);
+    background-image: url("asstes/img/pokeball2.png");
     background-position: 185px  285px;
     background-size: 30px;
     background-repeat: no-repeat;
@@ -154,7 +202,7 @@ input[type=text] {
     border-radius: 50px;
     font-size: larger;
     background-color: rgb(255, 255, 255);
-    background-image: url('img/relodeicon.png');
+    background-image: url('assets/img/relodeicon.png');
     background-position: 2px 2px ; 
     background-repeat: no-repeat;
     background-size: 48px; 
@@ -175,11 +223,10 @@ input[type=text] {
     height: 70px;
   }
 
-  .PokeCardInfo{
-    height: fit-content;
-    width: 100px;
-    background-color: rgb(135, 131, 131);
+  blur{
+    filter: blur(5px);
   }
+  
 
   .PokeCardInfo {
     font-size: 18px;
@@ -198,6 +245,7 @@ input[type=text] {
     z-index: 1000;
     border: 2px black solid;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
 
 .PokeCardInfo img {
@@ -349,6 +397,7 @@ input[type=text] {
   gap: 10px;
 }
 .searchSection{
+  background-image: none;
   height: 45px;
 }
 .SearchBar{
@@ -360,6 +409,7 @@ input[type=text] {
   background-size: 30px;
   background-position: 0px 0px;
   margin-right: 10px;
+  padding: 5px;
 }
 .mainCard{
   display: flex;
@@ -371,6 +421,9 @@ input[type=text] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+input[type=text]{
+  background-image: none;
 }
 
 }

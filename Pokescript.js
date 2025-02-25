@@ -60,6 +60,8 @@ function cleansearch() {
   displayPokemon(allPokemon.slice(0, currentPokemonIndex + LoadnextPokemons));
 }
 
+
+
 async function showPokeInfo(id) {
   closePokeInfo();
   const pokemon = allPokemon.find((pokemon) => pokemon.id === id);
@@ -67,15 +69,16 @@ async function showPokeInfo(id) {
   const maincard = document.getElementById("main-card");
   const typeClass = pokemon.firstType;
   maincard.innerHTML += `
+  
   <div class="PokeCardInfo ${typeClass}">
   <div class="Pokecardbutton">
     <h2 class="PokeInfoCardName">${pokemon.name}</h2>
     <button class="PokeCardClosebutton" onclick="closePokeInfo()">Close</button>
   </div>
   <div class="center">
-    <button onclick="nextPokemon('left')" class="nextPokemonButton"><</button>
+    <img class="arrow" src="assets/img/pfeil-links.png"  onclick="nextPokemon('left')" alt="">
     <img src="${pokemon.image}" alt="${pokemon.name}">
-    <button onclick="nextPokemon('right')" class="nextPokemonButton">></button>
+          <img class="arrow" src="assets/img/pfeil-rechts.png " onclick="nextPokemon('right')" alt="">
   </div>
   <div class="center">
     <p class="PokeStats"><b>Type:</b> ${pokemon.type}</p>
@@ -89,13 +92,19 @@ async function showPokeInfo(id) {
   <ul class="PokeStats">
       ${pokemon.moves.slice(0, 10).map((move) => `<li>${move}</li>`).join("")}
   </ul>
-</div>
+ </div>
+
     `;
 }
 
 function closePokeInfo() {
+ 
   const infoDiv = document.querySelector(".PokeCardInfo");
   if (infoDiv) infoDiv.remove();
+
+  let background = document.getElementById('main-card')
+  background.classList.remove('blur')
+  
 }
 
 async function loadMorePokemon() {
